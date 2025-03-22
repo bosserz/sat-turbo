@@ -1,0 +1,24 @@
+{
+    "math": [
+        {
+            "id": 1,
+            "question": "If 2x + 3 = 7, what is x?",
+            "options": ["1", "2", "3", "4"],
+            "correct": "2"
+        },
+        {
+            "id": 2,
+            "question": "What is 5²?",
+            "options": ["10", "15", "20", "25"],
+            "correct": "25"
+        }
+    ],
+    "reading": [
+        {
+            "id": 3,
+            "question": "The word 'benevolent' most nearly means:",
+            "options": ["angry", "kind", "sad", "tired"],
+            "correct": "kind"
+        }
+    ]
+}
