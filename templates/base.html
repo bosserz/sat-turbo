@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SAT Practice</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        {% if 'user_id' in session %}
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('practice') }}">Practice</a>
+            <a href="{{ url_for('full_test') }}">Full Test</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
+    </nav>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
