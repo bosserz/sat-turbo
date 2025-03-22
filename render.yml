@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: sat-practice
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: sat_practice_db
+          property: connectionString
+      - key: PYTHON_VERSION
+        value: 3.9.0
+
+databases:
+  - name: sat_practice_db
+    plan: free
